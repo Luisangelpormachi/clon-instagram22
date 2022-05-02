@@ -67,7 +67,7 @@
     float: left;
     width: 25px;
     height: 25px;
-    margin-right: 20px;
+    margin-right: 7px;
     overflow: hidden;
 }
 
@@ -81,4 +81,10 @@
     max-height: 450px;
     overflow: hidden;
     overflow-y: auto;
+}
+
+.count-likes{
+    float: left;
+    color: gray;
+    margin-right: 15px;
 }

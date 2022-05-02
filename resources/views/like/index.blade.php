@@ -4,15 +4,16 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            @include('includes/message')
-
-            @foreach($images as $item)
-                @include('includes/image')
+            
+            <h2 class="text-center">Me encanta</h2>
+            <hr>
+            @foreach($likes as $item)
+                @include('includes/image', ['item' => $item->image])
             @endforeach
 
         </div>
         <div class="paginate">
-            {{ $images->links() }}
+            {{ $likes->links() }}
         </div>
     </div>
 </div>

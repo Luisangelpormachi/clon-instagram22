@@ -76,7 +76,7 @@ class ImageController extends Controller
     
     public function detail($id){
 
-        $image = Image::findOrFail($id);
+        $image = Image::find($id);
         return view('image.detail', compact('image'));
     }
 

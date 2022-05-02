@@ -40,9 +40,32 @@
 
                                     <p>{{ $image->description }}</p>
                                 </div>
-                                <div class="box-like">
+                                {{--<div class="box-like">
                                     <img src="{{ asset('img/icons/heart-grey.png') }}" alt="">
+                                </div>--}}
+
+                                <div class="box-like">
+
+                                    <?php $like_user = false ?>
+                                    
+                                    @foreach($image->likes as $user)
+                                        @if($image->user_id == Auth::user()->id)
+                                            <?php $like_user = true ?>
+                                        @endif
+                                    @endforeach
+
+                                    @if($like_user)
+                                        <img src="{{ asset('img/icons/heart-red.png') }}" class="btn-dislike" data-id="{{ $image->id }}" alt="">
+                                    @else
+                                        <img src="{{ asset('img/icons/heart-grey.png') }}" class="btn-like" data-id="{{ $image->id }}" alt="">
+                                    @endif
+                                    
                                 </div>
+                                <div class="count-likes">
+                                        ({{count($image->likes)}})
+                                </div>
+
+
                             </div>
                             <div class="col-lg-12 mt-5 mb-5">
                                 <h3>Comentario ({{ count($image->comments) }})</h3>

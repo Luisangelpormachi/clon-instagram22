@@ -33,7 +33,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
-Route::get('/configuracion', 'UserController@config')->name('user.config');
+Route::get('/config', 'UserController@config')->name('user.config');
 Route::post('/update', 'UserController@update')->name('user.update');
 Route::get('/user/avatar/{filename}', 'UserController@getImage')->name('user.avatar');
 Route::get('/upload-image', 'ImageController@create')->name('upload.image');
@@ -42,4 +42,7 @@ Route::get('/image-file/{filename}', 'ImageController@getImage')->name('image.fi
 Route::get('/image-detail/{id}', 'ImageController@detail')->name('image.detail');
 Route::post('/comment-image-save', 'CommentController@save')->name('comment.image.save');
 Route::get('/comment-image-delete/{id}', 'CommentController@delete')->name('comment.image.delete');
+Route::get('/like/{image_id}', 'LikeController@save')->name('like.save');
+Route::get('/dislike/{image_id}', 'LikeController@delete')->name('like.delete');
+Route::get('/like-favorites', 'LikeController@index')->name('like.index');
 

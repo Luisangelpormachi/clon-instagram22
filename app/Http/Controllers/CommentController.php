@@ -51,7 +51,7 @@ class CommentController extends Controller
         $user = Auth::user();
 
         //obtener modelo de comentario
-        $comment = Comment::findOrFail($id);
+        $comment = Comment::find($id);
 
         //validar el eliminado (si es dueño del comentario o dueño de la imagen)
         if($user &&  ($comment->user_id == $user->id || $comment->image->user_id == $user->id)){
