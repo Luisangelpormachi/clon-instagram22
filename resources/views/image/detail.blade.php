@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container  mt-5">
     <div class="row justify-content-center">
         <div class="col-md-12">
             @include('includes/message')
@@ -17,10 +17,10 @@
                         <img src="{{ route('user.avatar', ['filename' => 'perfil_men.jpg']) }}" class="user-avatar" alt="">
                     </div>
                     @endif
-                    <div class="nombres-pub">
+                    <a href="{{ route('user.profile', ['id' => $image->user->id]) }}" class="nombres-pub">
                         {{ $image->user->name.' '.$image->user->lastname}}
                         <span class="nickname">{{'| @'.$image->user->nick}}</span>
-                    </div>
+                    </a>
                 </div>
 
                 <div class="card-body">
@@ -61,9 +61,37 @@
                                     @endif
                                     
                                 </div>
+                                
                                 <div class="count-likes">
-                                        ({{count($image->likes)}})
+                                    ({{count($image->likes)}})
                                 </div>
+
+                                @if($image->user_id == Auth::user()->id)
+                                    <a  href="{{ route('image.edit',  ['id' => $image->id]) }}" class="btn btn-sm btn-warning">Editar</a>
+                                    <a  class="btn btn-sm btn-danger text-white" data-toggle="modal" data-target="#modal-eliminar-img">Eliminar</a>
+                                @endif
+                                
+                                <!-- Modal -->
+                                <div class="modal fade" id="modal-eliminar-img" tabindex="-1" role="dialog" aria-labelledby="modalImageDelete" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="modalImageDelete">¿Esta seguro?</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Si Elimina la imagen se borrara permanentamente, y no se podra revertir.
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-success" data-dismiss="modal">Cancelar</button>
+                                        <a href="{{ route('image.delete', ['id' => $image->id]) }}" class="btn btn-danger">Eliminar</a>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+
 
 
                             </div>

@@ -45,4 +45,8 @@ Route::get('/comment-image-delete/{id}', 'CommentController@delete')->name('comm
 Route::get('/like/{image_id}', 'LikeController@save')->name('like.save');
 Route::get('/dislike/{image_id}', 'LikeController@delete')->name('like.delete');
 Route::get('/like-favorites', 'LikeController@index')->name('like.index');
+Route::get('/profile/{id}', 'UserController@profile')->name('user.profile');
+Route::get('/image-delete/{id}', 'ImageController@delete')->name('image.delete');
+Route::get('/image-edit/{id}', 'ImageController@edit')->name('image.edit');
+Route::post('/image-update', 'ImageController@update')->name('image.update');
 

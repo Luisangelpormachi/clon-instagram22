@@ -88,3 +88,91 @@
     color: gray;
     margin-right: 15px;
 }
+
+.box-profile-user{
+    background-image: url('https://cdn.pixabay.com/photo/2021/10/14/11/40/sea-6708858_960_720.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 500px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 55px;
+    padding-right: 55px;
+    margin-bottom: 35px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+.box-profile-user img{
+    width: 100%;
+}
+
+.box-profile-user .profile-image{
+    width: 250px;
+    height: 250px;
+    border-radius: 999px;
+    outline: 5px solid rgba(51, 51, 51, 0.99);
+    box-shadow: 12px 35px 21px 10px rgba(51, 51, 51, 0.5);
+    overflow: hidden;
+    /* float: left; */
+}
+
+.box-profile-user .profile-image .user-avatar{
+    width: 100%;
+    height: 100%;
+}
+
+.box-profile-user .profile-user-info{
+    /* float: right; */
+    /* margin-top: 100px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+
+.box-profile-user .profile-user-info h1,
+.box-profile-user .profile-user-info h2,
+.box-profile-user .profile-user-info p{
+    background: rgba(252, 252, 252, 0.721);
+    padding: 0px 10px;
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.clear-fix{
+    clear: both;
+}
+
+.profile-images{
+    display: flex;
+    flex-direction: row;
+}
+
+.profile-images .container-image-pub{
+    margin: 15px;
+}
+
+
+/* responsive */
+
+@media (max-width: 575px) {
+    .box-profile-user{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .profile-images{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+
