@@ -18,7 +18,7 @@
     <div class="profile-user-info">
         <div class="">
             <h1>{{ '@'.$user->nick }}</h1>
-            <h2>{{ $user->name }} {{ $user->lastname }}</h2>
+            <h2>{{ $user->name }} {{ $user->surname }}</h2>
             <p>Se unió {{ FormatTime::LongTimeFilter($user->created_at) }}</p>
         </div>
     </div>

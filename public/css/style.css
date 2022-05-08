@@ -43,6 +43,7 @@
 }
 
 .container-image-pub .img-pub{
+    display: block;
     width: 100%;
     max-height: 350px;
     overflow: hidden;
@@ -59,6 +60,7 @@
 
 .paginate{
     position: fixed;
+    top: 55px;
     right: 0;
     margin-right: 10px;
 }
@@ -74,6 +76,10 @@
 .box-like img{
     width: 100%;
     height: 100%;
+}
+
+.box-like img:hover{
+    cursor: pointer;
 }
 
 .detail-comments{
@@ -115,7 +121,7 @@
     width: 250px;
     height: 250px;
     border-radius: 999px;
-    outline: 5px solid rgba(51, 51, 51, 0.99);
+    outline: 2px solid rgba(51, 51, 51, 0.8);
     box-shadow: 12px 35px 21px 10px rgba(51, 51, 51, 0.5);
     overflow: hidden;
     /* float: left; */
@@ -158,8 +164,36 @@
 }
 
 
-/* responsive */
+.box-list-user .list-user-info{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
 
+.box-list-user .list-user-info .list-img{
+    width: 200px;
+    height: 200px;
+    border-radius: 999px;
+    overflow: hidden;
+    margin: 20px;
+}
+
+.box-list-user .list-user-info .list-img img{
+    width: 100%;
+    height: 100%;
+}
+
+.box-list-user .list-user-info .list-description{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.box-list-user .list-user-info .list-description .btn{
+    width: 100px;
+}
+
+/* responsive */
 @media (max-width: 575px) {
     .box-profile-user{
         display: flex;

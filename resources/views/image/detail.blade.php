@@ -18,7 +18,7 @@
                     </div>
                     @endif
                     <a href="{{ route('user.profile', ['id' => $image->user->id]) }}" class="nombres-pub">
-                        {{ $image->user->name.' '.$image->user->lastname}}
+                        {{ $image->user->name.' '.$image->user->surname}}
                         <span class="nickname">{{'| @'.$image->user->nick}}</span>
                     </a>
                 </div>
@@ -48,8 +48,8 @@
 
                                     <?php $like_user = false ?>
                                     
-                                    @foreach($image->likes as $user)
-                                        @if($image->user_id == Auth::user()->id)
+                                    @foreach($image->likes as $item)
+                                        @if($item->user_id == Auth::user()->id)
                                             <?php $like_user = true ?>
                                         @endif
                                     @endforeach

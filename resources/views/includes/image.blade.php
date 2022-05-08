@@ -10,15 +10,15 @@
         </div>
         @endif
         <a href="{{ route('user.profile', [$item->user->id]) }}" class="nombres-pub">
-            {{ $item->user->name.' '.$item->user->lastname}}
+            {{ $item->user->name.' '.$item->user->surname}}
             <span class="nickname">{{'| @'.$item->user->nick}}</span>
         </a>
     </div>
 
     <div class="card-body">
-        <div class="img-pub">
+        <a href="{{ route('image.detail', ['id' => $item->id]) }}" class="img-pub">
             <img src="{{ route('image.file', ['filename' => $item->image_path]) }}" alt="">
-        </div>
+        </a>
         <div class="img-description">
             <span class="nickname">{{'@'.$item->user->nick}}</span>
             <span class="nickname datetime">{{'| '.FormatTime::LongTimeFilter($item->created_at) }}</span>
